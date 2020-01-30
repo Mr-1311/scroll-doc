@@ -11,7 +11,7 @@ SCROLL
 #+style: letspa-9 fs-20 md:fs-30 tsha-2px-2px-5px-black
 MAGICAL STATIC SITE GENERATOR
 
-#+style: letspa-4 fs-29 fm-'arial' bc-space_7 hover:bc-space p-10-40 rad-15 mt-90 astart
+#+style: letspa-4 fs-29 fm-'arial' bc-space_7 hover:bc-space p-10-40 rad-15 mt-90
 [[./docs/installation.org][Get Started]]
 
 *** #+style: dis-f
