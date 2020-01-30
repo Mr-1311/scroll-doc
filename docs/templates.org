@@ -1,0 +1,52 @@
+#+TITLE: Templates
+
+* Templates
+Scrolls template engine currently supporting only if statements and printing variables.
+
+* Variables
+
+** Page
+Page variable is the all content that comes from org file. Every template should
+contains it otherwise Scroll will generate only html of template but not document.
+
+*** Usage
+#+BEGIN_SRC
+<<page>>
+
+
+#+END_SRC
+*NOTE*: Do note use whitespace while using page variable
+
+*** Example
+#+BEGIN_SRC
+<!DOCTYPE html>
+<html>
+  <body>
+    <<page>>
+  </body>
+</html>
+
+
+#+END_SRC
+
+** Title
+If title not set in document, variable will be empty, so its better to use it
+with if statement.
+
+*** Usage
+#+BEGIN_SRC
+{{ if title }}<title>{title}</title>{{ endif }}
+
+
+#+END_SRC
+
+** Date
+If date not set in document, variable will be empty, so its better to use it
+with if statement.
+
+*** Usage
+#+BEGIN_SRC
+{{ if date }}<h1 class="date">{date}</h1>{{ endif }}
+
+
+#+END_SRC

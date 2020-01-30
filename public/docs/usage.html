@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+    <link rel="stylesheet" type="text/css" href="/scroll_style.css">
+    <title> Usage </title>
+    <link rel="stylesheet" href="/syntax_hl/default.css">
+    <script src="/syntax_hl/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div style="text-align: center; padding: 10px;display: flex;
+                justify-content: space-around;align-items: center;
+                border-bottom: 3px solid blue; background-color: #15191A;width: 100%;">
+
+      <a href="../../"><img src="../../logo.png" alt="scroll" style="width:64px;height:64px;"></a>
+
+      <a href="https://github.com/metinur/scroll"> Github </a>
+
+    </div>
+    <div class="container md:width">
+
+      <div class="incon md:fdir">
+        <div style="min-width: 19rem">
+          <ul style="margin: 30px; padding: 15px;">
+            <li><a href="./installation.html">Installation</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./folder_structure.html">Folder Structure</a></li>
+            <li><a href="./templates.html">Templates</a></li>
+            <li><a href="./pages.html">Pages</a></li>
+            <li><a href="./styling.html">Styling</a></li>
+          </ul>
+        </div>
+        <div class="pagecon md:pagecon">
+          <h1 id="usage">Usage</h1>
+<div >
+<p>Scroll comes with 4 straightforward subcommand:</p>
+<h2 id="new">New</h2>
+<div >
+<pre><code class=" bash">
+Create new site.
+
+USAGE:
+    scroll new &lt;site_name&gt;
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+ARGS:
+    &lt;site_name&gt;
+
+</code></pre>
+</div>
+<h2 id="build">Build</h2>
+<div >
+<pre><code class=" bash">
+Build the site.
+
+USAGE:
+    scroll build [FLAGS]
+
+FLAGS:
+    -h, --help          Prints help information
+    -s, --then-serve    Start serve and watch on local after build the site.
+    -V, --version       Prints version information
+
+</code></pre>
+</div>
+<h2 id="serve">Serve</h2>
+<div >
+<pre><code class=" bash">
+Serve static site for local usage and test.
+
+USAGE:
+    scroll serve [FLAGS] [OPTIONS]
+
+FLAGS:
+    -h, --help        Prints help information
+    -n, --no-watch    Don&#39;t watch file changes, only serve
+    -V, --version     Prints version information
+
+OPTIONS:
+    -p, --port &lt;port&gt;    Specify port to serve. [default: 1919]
+
+</code></pre>
+</div>
+<h2 id="watch">Watch</h2>
+<div >
+<pre><code class=" bash">
+Only Watch and Rebuild files.
+
+USAGE:
+    scroll watch
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+</code></pre>
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>
+    </footer>
+  </body>
+</html>

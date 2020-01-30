@@ -1,0 +1,167 @@
+#+TITLE: Folder Structure
+* Folder Structure
+When Scroll create new site, it generates this files.
+
+#+BEGIN_SRC bash
+.
+├── index.org
+├── logo.png
+├── scroll.toml
+├── style_config.toml
+├── templates
+│   ├── default_template.html
+│   └── empty_template.html
+└── theme.css
+
+1 directory, 7 file
+
+
+#+END_SRC
+** Initial Files
+*** index.org and logo.png
+These files are for initial page. To see how its look, site can be build and
+serve with ~scroll build~ and ~scroll serve~ commands. They can be deleted or
+changed totaly.
+*** scroll.toml
+scroll.toml is the main config file of the site and it has to exist in the site
+root.
+
+Its contains only default_template variable currently but new variables will be
+added soon.
+
+*** style_config.toml
+style_config.toml is the config file of inline styling in Scroll. With the
+settings in this file you can add various styles to your site without leaving
+your document file. [[./styling.html][learn more.]]
+
+*** templates/
+Templaste folder is contains default templates. These templates can be changed
+or added new templates from scratch. [[./templates.html][learn more.]]
+
+*** theme.css
+theme.css file contains default styles of certain html elements. It's a regular
+css file and can be changed as desired. To make an impact it should be linked to
+pages via templates. Default templates already has proper links
+to this file but if you crate new template or change this theme's location, link
+should be adjust manualy. Also you can create as much css file as desired but
+they should be linked via template to make an impact.
+
+** New Files
+A Scroll directory can contain any file or directory except that has name of
+following files/dirs: scroll.toml, style_config.toml, public and templates. When Scroll
+builds a site it is copy all files and dirs with its content directly to public
+folder. If a file has a .org extension Scroll parse it to html and put it in
+selected template.
+
+*** Example
+To understand better let's do an practical example. Currently Scroll hasn't
+build-in syntax highlighing but there is already nice plugins that work on html.
+So let's make an website that using [[https://highlightjs.org/][highlight.js]] for syntax highlighing of code snippets.
+
+**** Create new site
+First, we need to create new site.
+#+BEGIN_SRC
+scroll new example
+
+
+#+END_SRC
+This command will create new folder called example and it has this files.
+#+BEGIN_SRC bash
+.
+├── index.org
+├── logo.png
+├── scroll.toml
+├── style_config.toml
+├── templates
+│   ├── default_template.html
+│   └── empty_template.html
+└── theme.css
+
+1 directory, 7 file
+
+
+#+END_SRC
+Now we can delete all the content on index.org and then put some code snippet.
+
+**** Changing template
+To use highlight.js we need to download highlight.pack.js file and one css file
+and add these lines to html file:
+#+BEGIN_SRC
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+#+END_SRC
+I downloaded files and put them under the syntax_hl folder. Directory tree looks like
+this:
+#+BEGIN_SRC
+.
+├── index.org
+├── logo.png
+├── scroll.toml
+├── style_config.toml
+├── syntax_hl
+│   ├── default.css
+│   └── highlight.js
+├── templates
+│   ├── default_template.html
+│   └── empty_template.html
+└── theme.css
+
+2 directories, 9 files
+
+
+#+END_SRC
+To use highlight.js on every page we are going to link files via
+default_template.html file under the templates folder. I added these lines to
+head section.
+#+BEGIN_SRC
+<link rel="stylesheet" href="/syntax_hl/default.css">
+<script src="/syntax_hl/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+#+END_SRC
+
+**** Building site
+Now I can built the site with ~scroll build~ command. Directory tree looks like
+this.
+#+BEGIN_SRC
+.
+├── index.org
+├── logo.png
+├── public
+│   ├── index.html
+│   ├── logo.png
+│   ├── scroll_style.css
+│   ├── syntax_hl
+│   │   ├── default.css
+│   │   └── highlight.js
+│   └── theme.css
+├── scroll.toml
+├── style_config.toml
+├── syntax_hl
+│   ├── default.css
+│   └── highlight.js
+├── templates
+│   ├── default_template.html
+│   └── empty_template.html
+└── theme.css
+
+4 directories, 15 files
+
+
+#+END_SRC
+
+highlight.js is automaticaly detect language and highlight the code snippet. My
+code snippet looks like this.
+
+#+BEGIN_SRC
+fn main() {
+    println!("Scroll is awesome!");
+}
+
+
+#+END_SRC
+You can serve your site with ~scroll serve~ command and see your page on your browser.

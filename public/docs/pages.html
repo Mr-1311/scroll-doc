@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+    <link rel="stylesheet" type="text/css" href="/scroll_style.css">
+    <title> Pages </title>
+    <link rel="stylesheet" href="/syntax_hl/default.css">
+    <script src="/syntax_hl/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div style="text-align: center; padding: 10px;display: flex;
+                justify-content: space-around;align-items: center;
+                border-bottom: 3px solid blue; background-color: #15191A;width: 100%;">
+
+      <a href="../../"><img src="../../logo.png" alt="scroll" style="width:64px;height:64px;"></a>
+
+      <a href="https://github.com/metinur/scroll"> Github </a>
+
+    </div>
+    <div class="container md:width">
+
+      <div class="incon md:fdir">
+        <div style="min-width: 19rem">
+          <ul style="margin: 30px; padding: 15px;">
+            <li><a href="./installation.html">Installation</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./folder_structure.html">Folder Structure</a></li>
+            <li><a href="./templates.html">Templates</a></li>
+            <li><a href="./pages.html">Pages</a></li>
+            <li><a href="./styling.html">Styling</a></li>
+          </ul>
+        </div>
+        <div class="pagecon md:pagecon">
+          <h1 id="pages">Pages</h1>
+<div >
+<h2 id="variables">Variables</h2>
+<div >
+<p>In org documents user can define some variables to use it on templates or change some config for only this file.</p>
+<p>Variable names are case insensitive.</p>
+<p><b>NOTE</b>: More variables will come soon.</p>
+<h3 id="title">title</h3>
+<div >
+<p>Can be used in templates.</p>
+<p>Usage:</p>
+<pre><code class="">
+#+TITLE: Page Title
+
+</code></pre>
+</div>
+<h3 id="date">Date</h3>
+<div >
+<p>Can be used in templates.</p>
+<p>Usage:</p>
+<pre><code class="">
+#+DATE: 2020-01-01
+
+</code></pre>
+</div>
+<h3 id="template">Template</h3>
+<div >
+<p>Template variable determine template to use for this page.</p>
+<p>Usage:</p>
+<pre><code class="">
+#+TEMPLATE: my_template.html
+
+</code></pre>
+</div>
+</div>
+<h2 id="elements">Elements</h2>
+<div >
+<p>Currently Scroll supports following org elements but new elements will be added.</p>
+<p>How they look on the editor. (all commented)</p>
+<pre><code class="">
+# * header
+
+# paragraph
+
+# - list element
+# - list element
+#   - inner list element
+#     - inner list element
+#       - inner list element
+#     - inner list element
+#   - inner list element
+# - list element
+#   paragraph under list element
+# - list element
+
+# #+BEGIN_SRC
+# code
+# snipet
+# block
+# #+END_SRC
+
+# #+BEGIN_QUOTE
+# quote block
+# #+END_QUOTE
+
+# BEGIN_HTML is a scroll specific block and its embed html directly to page.
+# #+BEGIN_HTML
+# &lt;iframe width=&quot;420&quot; height=&quot;315&quot;
+#   src=&quot;https://www.youtube.com/embed/tgbNymZ7vqY&quot;
+#   allowfullscreen=&quot;allowfullscreen&quot;&gt;
+# &lt;/iframe&gt;
+# #+END_HTML
+
+# *bold* /italic/ +strikethrough+ _underline_ ~code~ [[https://github.com/metinur/scroll][link]]
+
+# Org-mode has not different syntax for images, if a link ends with img tag supported
+# file extension it becomes img automaticaly
+
+# [[../logo.png]]
+
+</code></pre>
+<p>How they look on browser:</p>
+</div>
+</div>
+<h1 id="header">header</h1>
+<div >
+<p>paragraph</p>
+<ul>
+<li>list element</li>
+<li>list element</li>
+<ul>
+<li>inner list element</li>
+<ul>
+<li>inner list element</li>
+<ul>
+<li>inner list element</li>
+</ul>
+<li>inner list element</li>
+</ul>
+<li>inner list element</li>
+</ul>
+<li>list element</li>
+<p>  paragraph under list element</p>
+<li>list element</li>
+</ul>
+<pre><code class="">
+code
+snipet
+block
+
+</code></pre>
+<blockquote>
+quote block</blockquote>
+<p>BEGIN_HTML is a scroll specific block and its embed html directly to page.</p>
+
+<iframe width="420" height="315"
+  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+  allowfullscreen="allowfullscreen">
+</iframe><p><b>bold</b> <i>italic</i> <s>strikethrough</s> <u>underline</u> <code>code</code> <a href="https://github.com/metinur/scroll">link</a></p>
+<p>Org-mode has not different syntax for images, if a link ends with img tag supported file extension it becomes img automaticaly</p>
+<img src="../logo.png" alt="img"/></div>
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>
+    </footer>
+  </body>
+</html>

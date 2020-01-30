@@ -1,0 +1,63 @@
+#+TITLE: Usage
+* Usage
+Scroll comes with 4 straightforward subcommand:
+** New
+#+BEGIN_SRC bash
+Create new site.
+
+USAGE:
+    scroll new <site_name>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+ARGS:
+    <site_name>
+
+
+#+END_SRC
+** Build
+#+BEGIN_SRC bash
+Build the site.
+
+USAGE:
+    scroll build [FLAGS]
+
+FLAGS:
+    -h, --help          Prints help information
+    -s, --then-serve    Start serve and watch on local after build the site.
+    -V, --version       Prints version information
+
+
+#+END_SRC
+** Serve
+#+BEGIN_SRC bash
+Serve static site for local usage and test.
+
+USAGE:
+    scroll serve [FLAGS] [OPTIONS]
+
+FLAGS:
+    -h, --help        Prints help information
+    -n, --no-watch    Don't watch file changes, only serve
+    -V, --version     Prints version information
+
+OPTIONS:
+    -p, --port <port>    Specify port to serve. [default: 1919]
+
+
+#+END_SRC
+** Watch
+#+BEGIN_SRC bash
+Only Watch and Rebuild files.
+
+USAGE:
+    scroll watch
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+
+#+END_SRC

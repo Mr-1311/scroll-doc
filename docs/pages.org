@@ -1,0 +1,131 @@
+#+TITLE: Pages
+* Pages
+** Variables
+In org documents user can define some variables to use it on templates or change
+some config for only this file.
+
+Variable names are case insensitive.
+
+*NOTE*: More variables will come soon.
+
+*** title
+Can be used in templates.
+
+Usage:
+#+BEGIN_SRC
+#+TITLE: Page Title
+
+
+#+END_SRC
+
+*** Date
+Can be used in templates.
+
+Usage:
+#+BEGIN_SRC
+#+DATE: 2020-01-01
+
+
+#+END_SRC
+
+
+*** Template
+Template variable determine template to use for this page.
+
+Usage:
+#+BEGIN_SRC
+#+TEMPLATE: my_template.html
+
+
+#+END_SRC
+** Elements
+Currently Scroll supports following org elements but new elements will be added.
+
+How they look on the editor. (all commented)
+#+BEGIN_SRC
+# * header
+
+# paragraph
+
+# - list element
+# - list element
+#   - inner list element
+#     - inner list element
+#       - inner list element
+#     - inner list element
+#   - inner list element
+# - list element
+#   paragraph under list element
+# - list element
+
+# #+BEGIN_SRC
+# code
+# snipet
+# block
+# #+END_SRC
+
+# #+BEGIN_QUOTE
+# quote block
+# #+END_QUOTE
+
+# BEGIN_HTML is a scroll specific block and its embed html directly to page.
+# #+BEGIN_HTML
+# <iframe width="420" height="315"
+#   src="https://www.youtube.com/embed/tgbNymZ7vqY"
+#   allowfullscreen="allowfullscreen">
+# </iframe>
+# #+END_HTML
+
+# *bold* /italic/ +strikethrough+ _underline_ ~code~ [[https://github.com/metinur/scroll][link]]
+
+# Org-mode has not different syntax for images, if a link ends with img tag supported
+# file extension it becomes img automaticaly
+
+# [[../logo.png]]
+
+
+#+END_SRC
+
+How they look on browser:
+
+* header
+
+paragraph
+
+- list element
+- list element
+  - inner list element
+    - inner list element
+      - inner list element
+    - inner list element
+  - inner list element
+- list element
+  paragraph under list element
+- list element
+
+#+BEGIN_SRC
+code
+snipet
+block
+
+
+#+END_SRC
+
+#+BEGIN_QUOTE
+quote block
+#+END_QUOTE
+
+BEGIN_HTML is a scroll specific block and its embed html directly to page.
+#+BEGIN_HTML
+<iframe width="420" height="315"
+  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+  allowfullscreen="allowfullscreen">
+</iframe>
+#+END_HTML
+
+*bold* /italic/ +strikethrough+ _underline_ ~code~ [[https://github.com/metinur/scroll][link]]
+
+Org-mode has not different syntax for images, if a link ends with img tag supported
+file extension it becomes img automaticaly
+
+[[../logo.png]]

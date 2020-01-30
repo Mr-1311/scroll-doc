@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+    <link rel="stylesheet" type="text/css" href="/scroll_style.css">
+    <title> Templates </title>
+    <link rel="stylesheet" href="/syntax_hl/default.css">
+    <script src="/syntax_hl/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div style="text-align: center; padding: 10px;display: flex;
+                justify-content: space-around;align-items: center;
+                border-bottom: 3px solid blue; background-color: #15191A;width: 100%;">
+
+      <a href="../../"><img src="../../logo.png" alt="scroll" style="width:64px;height:64px;"></a>
+
+      <a href="https://github.com/metinur/scroll"> Github </a>
+
+    </div>
+    <div class="container md:width">
+
+      <div class="incon md:fdir">
+        <div style="min-width: 19rem">
+          <ul style="margin: 30px; padding: 15px;">
+            <li><a href="./installation.html">Installation</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./folder_structure.html">Folder Structure</a></li>
+            <li><a href="./templates.html">Templates</a></li>
+            <li><a href="./pages.html">Pages</a></li>
+            <li><a href="./styling.html">Styling</a></li>
+          </ul>
+        </div>
+        <div class="pagecon md:pagecon">
+          <h1 id="templates">Templates</h1>
+<div >
+<p>Scrolls template engine currently supporting only if statements and printing variables.</p>
+</div>
+<h1 id="variables">Variables</h1>
+<div >
+<h2 id="page">Page</h2>
+<div >
+<p>Page variable is the all content that comes from org file. Every template should contains it otherwise Scroll will generate only html of template but not document.</p>
+<h3 id="usage">Usage</h3>
+<div >
+<pre><code class="">
+&lt;&lt;page&gt;&gt;
+
+</code></pre>
+<p><b>NOTE</b>: Do note use whitespace while using page variable</p>
+</div>
+<h3 id="example">Example</h3>
+<div >
+<pre><code class="">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;&lt;page&gt;&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+</div>
+</div>
+<h2 id="title">Title</h2>
+<div >
+<p>If title not set in document, variable will be empty, so its better to use it with if statement.</p>
+<h3 id="usage">Usage</h3>
+<div >
+<pre><code class="">
+{{ if title }}&lt;title&gt;{title}&lt;/title&gt;{{ endif }}
+
+</code></pre>
+</div>
+</div>
+<h2 id="date">Date</h2>
+<div >
+<p>If date not set in document, variable will be empty, so its better to use it with if statement.</p>
+<h3 id="usage">Usage</h3>
+<div >
+<pre><code class="">
+{{ if date }}&lt;h1 class=&quot;date&quot;&gt;{date}&lt;/h1&gt;{{ endif }}
+
+</code></pre>
+</div>
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>
+    </footer>
+  </body>
+</html>

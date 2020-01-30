@@ -1,0 +1,70 @@
+#+title: ✨ SCROLL ✨
+#+template: empty_template.html
+
+* #+style: w-100% dis-flex fdir-column jc-center ai-center ta-center
+** #+style: minh-100vh dis-flex fdir-column jc-center ai-center ta-center
+#+style: m-50 w-150
+[[./logo.png]]
+
+#+style: fw-100 letspa-19 fs-50 md:fs-60 tsha-2px-2px-5px-black
+SCROLL
+#+style: letspa-9 fs-20 md:fs-30 tsha-2px-2px-5px-black
+MAGICAL STATIC SITE GENERATOR
+
+#+style: letspa-4 fs-29 fm-'arial' bc-space_7 hover:bc-space p-10-40 rad-15 mt-90 astart
+[[./docs/installation.org][Get Started]]
+
+*** #+style: dis-f
+#+BEGIN_HTML
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<a class="github-button" href="https://github.com/metinur/scroll"
+data-size="large" aria-label="Star metinur/scroll on GitHub">Star</a>
+
+<a class="github-button" href="https://github.com/metinur/scroll/fork"
+data-icon="octicon-repo-forked" data-size="large" aria-label="Fork
+metinur/scroll on GitHub">Fork</a>
+#+END_HTML
+
+** #+style: dis-flex fdir-column w-100% bc-space_8 clr-white_6 p-50-30 ta-left
+
+#+style: ta-center m-40 mb-60 clr-red
+*Disclaimer*: The project, while usable, is in early stages. Therefore, you may
+not find some expected features or encounter some unexpected behavior.
+
+*** #+style: dis-flex fdir-column md:fdir-row
+**** #+style: f-1 p-40-10 md:p-40-190  borw-0-0-1-0 md:borw-0-1-1-0
+
+#+style: fs-2rem borbw-1 ta-center m-30 tsha-2px-2px-5px-yellow
+Customizable
+#+style: m-30
+Even if you are not familiar with CSS, thanks to our utility-first CSS system,
+you can easily customize every point off your site.
+
+**** #+style: f-1 p-40-10 md:p-40-190 borw-0-0-1-0 md:borbw-1
+
+#+style: fs-2rem borbw-1 ta-center m-30 tsha-2px-2px-5px-red
+Fast
+#+style: m-30
+Scroll is written in blazing fast [[https://www.rust-lang.org/][Rust]] language. Your medium-sized sites will be
+build almost instantly.
+
+*** #+style: dis-flex fdir-column md:fdir-row
+**** #+style: f-1 p-40-10 md:p-40-190 borw-0-0-1-0 md:borw-0-1-0-0
+
+#+style: fs-2rem borbw-1 ta-center m-30 tsha-2px-2px-5px-green
+Simple and Easy
+#+style: m-30
+Scroll is built with simplicity in mind. It tries to make site making as easy,
+simple and free as possible.
+
+**** #+style: f-1 p-40-10 md:p-40-190 borw-0 md:borw-0
+
+#+style: fs-2rem borbw-1 ta-center m-30 tsha-2px-2px-5px-blue
+Native Org-Mode Support
+#+style: m-30
+Scroll comes with one of the best note taking, planning, scheduling system,
+[[https://orgmode.org/][Org-Mode]], support. (and markdown soon)
+
+* #+style: ta-center
+Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>

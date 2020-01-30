@@ -1,0 +1,26 @@
+#+TITLE: Installation
+
+* Installation
+
+You can get Scroll with several ways.
+** 1. Download one of releases on github
+
+You can download a release that suitable your system on
+[[https://github.com/metinUr/scroll/releases][github]].
+
+** 2. Build from source
+If rust is installed, you can build the project from source.
+
+To do so, you have to clone the repository to your machine and compile it.
+
+#+BEGIN_SRC
+git clone https://github.com/metinUr/scroll.git
+cd scroll
+cargo build --release
+
+
+#+END_SRC
+This will create executable under target/release folder.
+
+** 3. Install from crates.io
+TODO
