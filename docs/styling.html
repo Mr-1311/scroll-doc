@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+    <link rel="stylesheet" type="text/css" href="/scroll_style.css">
+    <title> Styling </title>
+    <link rel="stylesheet" href="/syntax_hl/default.css">
+    <script src="/syntax_hl/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div style="text-align: center; padding: 10px;display: flex;
+                justify-content: space-around;align-items: center;
+                border-bottom: 3px solid blue; background-color: #15191A;width: 100%;">
+
+      <a href="../../"><img src="../../logo.png" alt="scroll" style="width:64px;height:64px;"></a>
+
+      <a href="https://github.com/metinur/scroll"> Github </a>
+
+    </div>
+    <div class="container md:width">
+
+      <div class="incon md:fdir">
+        <div style="min-width: 19rem">
+          <ul style="margin: 30px; padding: 15px;">
+            <li><a href="./installation.html">Installation</a></li>
+            <li><a href="./usage.html">Usage</a></li>
+            <li><a href="./folder_structure.html">Folder Structure</a></li>
+            <li><a href="./templates.html">Templates</a></li>
+            <li><a href="./pages.html">Pages</a></li>
+            <li><a href="./styling.html">Styling</a></li>
+          </ul>
+        </div>
+        <div class="pagecon md:pagecon">
+          <h1 id="styling">Styling</h1>
+<div >
+<p>One of the unique features of Scroll is it's built-in Utility-First CSS System that highly inspired from <a href="https://tailwindcss.com/">Tailwind CSS</a>.</p>
+<h2 id="utility-first-css-and-tailwind">Utility-First CSS and Tailwind</h2>
+<div >
+<p>Utiliry-First css is system that has css classes that explaning what it is doing in its name and use them to create custom styles as inline styles. And tailwind is A utility-first CSS framework for rapidly building custom designs.</p>
+<p>From <a href="https://www.tailwindcss.com">tailwindcss.com</a>:</p>
+<blockquote class="m-0 md:m-30">
+Tailwind CSS is a highly customizable, low-level CSS framework that gives you
+all of the building blocks you need to build bespoke designs without any
+annoying opinionated styles you have to fight to override.</blockquote>
+<p>Even there are some differences between Scrols style system and tailwind, they are share same philosophy of usage, so if this document dosen't enough for you or you want to learn more about what is utility-first css and what can you do with it you can always look tailwinds site. Most things that can be done with tailwind also can be done with Scroll so you can also use it as a learning resources of Scrolls style system.</p>
+<h3 id="differences-with-tailwind">Differences with tailwind</h3>
+<div >
+<p>Tailwind generates all the css classes once on config changes and ship all the classes with site. Scroll only generates classes that used in the site but generate them on every build. That makes Scrolls css file as small as possible which means there is minimum download time.</p>
+<p>In Scroll there are no predefined constant values. This could be a bad thing if you are creating big sites all with this but Scrolls styling system is for changing some part of site randomly so this is not big disadvantage. Even its can be an advantage in some cases. In the future there can be settings to set some constant and creating css rely on that values.</p>
+<p>In Scroll, class names should contain all values in class names and every class could contain one property. That makes Scrolls css system a little bit more verbose in some cases but there are plans to make some improvements on this issue.</p>
+</div>
+</div>
+<h2 id="how-to-add-class-names-to-elements">How to add class names to elements</h2>
+<div >
+<p>In Scroll there is a special keyword to use for adding class names to elements that will turn into html in build process. The keyword is <code>style</code> and can be defined as regular keyword in org-mode. To add the class name to the element, the style keyword must be one line above the element and there should be no space between them. You can add as many classes as you want by putting a space between them in the style keyword.</p>
+<h3 id="example">Example</h3>
+<div >
+<p>Lets add some style to a paragraph.</p>
+<p>Paragraph looks like this on text editor.</p>
+<pre><code class=" text bc-#F0F0F0 p-5-15 clr-grey_8">
+#+style: clr-white fs-30 bc-black p-30 rad-20
+Sample paragraph with differen color, font-size, background-color, padding and radius.
+
+</code></pre>
+<p>Looks like this on the browser:</p>
+<p class="clr-white fs-30 bc-black p-30 rad-20">Sample paragraph with differen color, font-size, background-color, padding and radius.</p>
+<p>Scroll generates html looks like this:</p>
+<pre><code class=" html">
+&lt;p class=&quot;clr-white fs-30 bc-black p-30 rad-20&quot;&gt;
+  Sample paragraph with differen color, font-size, background-color, padding and radius.
+&lt;/p&gt;
+
+</code></pre>
+<p>and generates these css classes:</p>
+<pre><code class="">
+.clr-white {
+    color: #ffffff;
+}
+.fs-30 {
+    font-size: 30px;
+}
+.bc-black {
+    background-color: #000000;
+}
+.p-30 {
+    padding: 30px;
+}
+.rad-20 {
+    border-radius: 20px;
+}
+
+</code></pre>
+</div>
+</div>
+<h2 id="class-name-syntax">Class Name Syntax</h2>
+<div >
+<p>Because of the css file is not pregenerated in Scroll, css properties and their values generated based on their class names.</p>
+<p>Syntax:</p>
+<pre><code class="">
+{media_query}:{psudo_selector_0}:{..psudo_selector_n}:{property_alias}-{value_0}-{..value_n}</code></pre>
+<h3 class="md:hover:bor-black-3-solid" id="example">Example</h3>
+<div >
+<pre><code class="">
+#+style: md:hover:bor-3-solid-black
+
+</code></pre>
+<ul>
+<li>md is a media query</li>
+<li>hover is a pseudo class</li>
+<li>bor is a css property alias</li>
+<li>3 is the first value and its a px length</li>
+<li>solid is the second value and its a keyword</li>
+<li>black is the last value and its a color</li>
+</ul>
+<p>This style keyword will generate this css class:</p>
+<pre><code class=" css">
+@media (min-width: 768px) {
+    .md\:hover\:bor-3-solid-black:hover {
+        border: 3px solid #000000;
+    }
+}
+
+</code></pre>
+<p>Scroll determine what to generate by parsing class name according to style_config.toml file. So let's look into the config file.</p>
+</div>
+<h3 id="media-queries">Media queries</h3>
+<div >
+<pre><code class="">
+[responsive]
+  [[responsive.query]]
+    name = &quot;sm&quot;
+    min_width = &quot;640px&quot;
+
+  [[responsive.query]]
+    name = &quot;md&quot;
+    min_width = &quot;768px&quot;
+
+  [[responsive.query]]
+    name = &quot;lg&quot;
+    min_width = &quot;1024px&quot;
+
+  [[responsive.query]]
+    name = &quot;xl&quot;
+    min_width = &quot;1280px&quot;
+
+</code></pre>
+<p>In the responsive scope in style_confing.toml file, there are query properties. Queries just consists of 2 property, name and min_width. name is the property that called in class name and min_width is the pixel that active the relevant CSS class.</p>
+<p>Any amount of break point can be added but they should be sorted from small to large.</p>
+<p>Media queries can be add to any css property and they should be in the beginnig.</p>
+<p>Scroll uses a mobile first breakpoint system and Its almost same with tailwinds default queiries so you can check out tailwinds <a href="https://tailwindcss.com/docs/responsive-design">document</a> for more examples.</p>
+<h4 id="example">Example</h4>
+<div >
+<pre><code class="">
+#+style: bc-red sm:bc-green md:bc-blue lg:bc-pink xl:bc-teal
+
+</code></pre>
+<div class="bc-red sm:bc-green md:bc-blue lg:bc-pink xl:bc-teal w-100% h-80">
+</div>
+</div>
+</div>
+<h3 id="css-data-types">CSS data types</h3>
+<div >
+<p>CSS properties can accept varius css data type and Scroll support most imported ones. Every CSS property that accept data type that Scroll supported can bu used in Scroll.</p>
+<h4 id="colors">Colors</h4>
+<div >
+<p>Color is the one of the imported css data type and Scroll has a nice support for it. In Scroll there is two ways you can define colors in class names.</p>
+<h5 id="defining-color-as-hex-numbers">Defining color as hex numbers</h5>
+<div >
+<h6 id="example">Example</h6>
+<div >
+<pre><code class="">
+#+style: bc-#9b59b6
+It can also supports transparency
+#+style: bc-#9b59b688
+
+</code></pre>
+<div class="bc-#9b59b6 w-100% h-80 mb-20">
+</div>
+<div class="bc-#9b59b688 w-100% h-80 mb-20">
+</div>
+</div>
+</div>
+<h5 id="using-predefined-colors">Using predefined colors</h5>
+<div >
+<p>In style_config.toml there is colors scope and you can define as much color as you want.</p>
+<pre><code class="">
+[colors]
+  range = 10
+  transparency_range = 10
+
+  [[colors.color]]
+    color = &quot;000000&quot;
+    color_alias = &quot;black&quot;
+
+  [[colors.color]]
+    color = &quot;ffffff&quot;
+    color_alias = &quot;white&quot;
+
+</code></pre>
+<p>There are also range and transparency_range variables in the colors scope. Predefined colors also can be interpolated to white or black to quickly adjust color tones and these variables are defining interpolation range.</p>
+<h6 id="example">Example</h6>
+<div >
+<pre><code class="">
+#+style: bc-red
+
+interpolation weight is typed after underscore
+make it darker
+#+style: bc-red_8
+
+make it lighter
+#+style: bc-red_2
+
+middle of the interpolation range is the color itself
+and to adjust transparency, put another underscore
+and then interpolation weight
+half transparent
+#+style: bc-red_5_5
+
+</code></pre>
+<div class="bc-green p-20">
+<div class="bc-red w-100% h-80 mb-20">
+</div>
+<div class="bc-red_8 w-100% h-80 mb-20">
+</div>
+<div class="bc-red_2 w-100% h-80 mb-20">
+</div>
+<div class="bc-red_5_5 w-100% h-80">
+</div>
+</div>
+</div>
+</div>
+</div>
+<h4 id="lengths">Lengths</h4>
+<div >
+<p>Scroll supports all the length units.</p>
+<pre><code class="">
+[lengths]
+  units = [ &quot;cm&quot;, &quot;mm&quot;, &quot;in&quot;, &quot;px&quot;, &quot;pt&quot;, &quot;pc&quot;, &quot;em&quot;, &quot;ex&quot;, &quot;ch&quot;, &quot;rem&quot;, &quot;vw&quot;, &quot;vh&quot;, &quot;vmin&quot;, &quot;vmax&quot;, &quot;%&quot; ]
+  default = &quot;px&quot;
+
+</code></pre>
+<p>If value in class name is length and it has no unit postfix then Scroll generate it with default postfix.</p>
+<h5 id="example">Example</h5>
+<div >
+<pre><code class="">
+#+style: p-40
+#+style: p-100vw
+
+</code></pre>
+<p>will generate</p>
+<pre><code class="">
+.p-40 {
+ padding: 40px;
+}
+.p-100vw {
+ padding: 100vw;
+}
+
+</code></pre>
+</div>
+</div>
+<h4 id="number">Number</h4>
+<div >
+<p>Scroll also support numbers</p>
+<h5 id="example">Example</h5>
+<div >
+<pre><code class="">
+#+style: lh-3
+
+</code></pre>
+<p>will generate</p>
+<pre><code class="">
+.lh-3 {
+ line-height: 3;
+}
+
+</code></pre>
+<p><b>NOTE</b>: If css property accept both number and length number should be in front  of data type list in style_config.toml property scope.</p>
+</div>
+</div>
+</div>
+<h3 id="properties">Properties</h3>
+<div >
+<p>To use any css property in Scroll, It should be defined in style_config.toml file in [properties] scope.</p>
+<p>Property template:</p>
+<pre><code class="">
+[properties]
+  [[properties.property]]
+    property_name =
+    property_name_alias =
+
+    keywords = [ &quot;&quot; ]
+    keyword_aliases = [ &quot;&quot; ]
+
+    data_types = [ &quot;&quot; ]
+
+</code></pre>
+<p><b>property_name</b> is required and it is the property name in css</p>
+<p><b>property_name_alias</b> is a shortcut for property name. If there is no '-' in the property name, property name or its alias can be used in the class name else only alias can be used</p>
+<p><b>keywords</b> is the list of supported keywords of property</p>
+<p><b>keyword_aliases</b> is a list of shortcuts of keywords. Its index should match with keywords index. Create all the aliases is not required, if there is gonna be gap in first part of the array, empty aliases can be filled with '_', if gap is in the end, then there is no need to fill it. If there is no '-' in the keyword name, keyword name or its alias can be used as a value else only alias can be used.</p>
+<p><b>data_types</b> is the data types that property can accept. Their order is important, if property accept number and length then put number in front of length and use lengths default unit with its postfix, otherwise Scroll append default length unit postfix to number and number became unreachable for that property.</p>
+<h4 id="examples">Examples</h4>
+<div >
+<pre><code class="">
+[properties]
+  [[properties.property]]
+    ## css syntax = align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+    property_name = &quot;align-content&quot;
+    property_name_alias = &quot;ac&quot;
+
+    keywords = [ &quot;stretch&quot;, &quot;center&quot;, &quot;flex-start&quot;, &quot;flex-end&quot;, &quot;space-between&quot;, &quot;space-around&quot;, &quot;intial&quot;, &quot;inherit&quot; ]
+    keyword_aliases = [ &quot;st&quot;, &quot;ce&quot;, &quot;fs&quot;, &quot;fe&quot;, &quot;sb&quot;, &quot;sa&quot; ]
+
+    data_types = [&quot;keyword&quot;]
+
+  [[properties.property]]
+    ## css syntax = box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+    property_name = &quot;box-shadow&quot;
+    property_name_alias = &quot;sha&quot;
+
+    keywords = [ &quot;none&quot;, &quot;inset&quot;, &quot;intial&quot;, &quot;inherit&quot; ]
+    keyword_aliases = [ &quot;&quot; ]
+
+    data_types = [&quot;keyword&quot;, &quot;length&quot;, &quot;color&quot; ]
+
+  [[properties.property]]
+    ## css syntax = line-height: normal|number|length|initial|inherit;
+    property_name = &quot;line-height&quot;
+    property_name_alias = &quot;lh&quot;
+
+    keywords = [ &quot;normal&quot;, &quot;intial&quot;, &quot;inherit&quot; ]
+    keyword_aliases = [ &quot;&quot; ]
+
+    data_types = [&quot;keyword&quot;, &quot;number&quot;, &quot;length&quot;]
+
+</code></pre>
+<pre><code class="">
+#+style: ac-ce
+and
+#+style: ac-center
+are gonna generate same property and value but different name.
+.ac-ce {
+    align-content: center;
+}
+.ac-center {
+    align-content: center;
+}
+
+if css property takes more than 1 parameter, parameters can be pass with &#39;-&#39; between them.
+#+style: sha-5-10-#000000
+
+.sha-5-10-/#000000 {
+  box-shadow: 5px 10px #000000;
+}
+
+#+style: lh-2
+if &quot;number&quot; is before then &quot;length&quot; in data_types array it will generate this.
+.lh-2 {
+  line-height: 2;
+}
+if &quot;length&quot; is before then &quot;number&quot; in data_types array it will put default postfix of length data type.
+.lh-2 {
+  line-height: 2px;
+}</code></pre>
+</div>
+</div>
+</div>
+<h2 id="creating-div-inside-document">Creating div inside document</h2>
+<div >
+<p>With Scroll you can create divs without leaving your document. In org-mode headlines can contain all the other elements, and if you put <code>style</code> keyword one line under the headline, all the elements under that headline will be generated under a div tag that has class names that style keyword contains.</p>
+<p>Also if you put <code>style</code> keyword directly to headline, the headline turns into div completely and there will be no header.</p>
+<p>Let's make an example to understand it better.</p>
+<pre><code class="">
+# * Under that headline there is a custon div
+# #+style: dis-flex fdir-row jc-sb
+
+# ** #+style: w-64 h-64 bc-red
+# ** #+style: w-64 h-64 bc-green
+# ** #+style: w-64 h-64 bc-blue
+
+</code></pre>
+<p>This will generate html similer to this:</p>
+<pre><code class=" html">
+&lt;h1&gt;Under that headline there is a custon div&lt;/h1&gt;
+&lt;div class=&quot;dis-flex fdir-row jc-sb&quot;&gt;
+  &lt;div class=&quot;w-64 h-64 bc-red&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-64 h-64 bc-green&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-64 h-64 bc-blue&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p>And it will looks like this on the browser:</p>
+<h4 id="under-that-headline-there-is-a-custon-div">Under that headline there is a custon div</h4>
+<div class="dis-flex fdir-row jc-sb">
+<div class="w-64 h-64 bc-red">
+</div>
+<div class="w-64 h-64 bc-green">
+</div>
+<div class="w-64 h-64 bc-blue">
+</div>
+</div>
+</div>
+<div class="borbw-3 mt-64">
+</div>
+<h2 id="more-to-come..">more to come..</h2>
+<div >
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer>
+      Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>
+    </footer>
+  </body>
+</html>
