@@ -55,7 +55,7 @@ selected template.
 
 *** Example
 To understand better let's do an practical example. Currently Scroll hasn't
-build-in syntax highlighing but there is already nice plugins that work on html.
+built-in syntax highlighing but there is already nice plugins that works on html.
 So let's make an website that using [[https://highlightjs.org/][highlight.js]] for syntax highlighing of code snippets.
 
 **** Create new site
@@ -84,8 +84,8 @@ This command will create new folder called example and it has this files.
 Now we can delete all the content on index.org and then put some code snippet.
 
 **** Changing template
-To use highlight.js we need to download highlight.pack.js file and one css file
-and add these lines to html file:
+To use highlight.js we need to download highlight.pack.js file and one theme
+which is a css file and add these lines to html file:
 #+BEGIN_SRC
 <link rel="stylesheet" href="/path/to/styles/default.css">
 <script src="/path/to/highlight.pack.js"></script>
@@ -113,7 +113,7 @@ this:
 
 
 #+END_SRC
-To use highlight.js on every page we are going to link files via
+To use highlight.js on every page, we are going to link these files via
 default_template.html file under the templates folder. I added these lines to
 head section.
 #+BEGIN_SRC
@@ -125,7 +125,7 @@ head section.
 #+END_SRC
 
 **** Building site
-Now I can built the site with ~scroll build~ command. Directory tree looks like
+Now I can build the site with ~scroll build~ command. Directory tree looks like
 this.
 #+BEGIN_SRC
 .

@@ -2,7 +2,7 @@
 #+template: empty_template.html
 
 * #+style: w-100% dis-flex fdir-column jc-center ai-center ta-center
-** #+style: minh-100vh dis-flex fdir-column jc-center ai-center ta-center
+** #+style: minh-100vh dis-flex fdir-column jc-center ai-center
 #+style: m-50 w-150
 [[./logo.png]]
 
@@ -26,9 +26,9 @@ data-icon="octicon-repo-forked" data-size="large" aria-label="Fork
 metinur/scroll on GitHub">Fork</a>
 #+END_HTML
 
-** #+style: dis-flex fdir-column w-100% bc-space_8 clr-white_6 p-50-30 ta-left
+** #+style: dis-flex fdir-column jc-center ai-center w-100% bc-space_8 clr-white_6 p-50-30
 
-#+style: ta-center m-40 mb-60 clr-red
+#+style: ta-center m-100-10 clr-red
 *Disclaimer*: The project, while usable, is in early stages. Therefore, you may
 not find some expected features or encounter some unexpected behavior.
 
@@ -39,7 +39,7 @@ not find some expected features or encounter some unexpected behavior.
 Customizable
 #+style: m-30
 Even if you are not familiar with CSS, thanks to our utility-first CSS system,
-you can easily customize every point off your site.
+you can easily customize every point off your site without leaving your document.
 
 **** #+style: f-1 p-40-10 md:p-40-190 borw-0-0-1-0 md:borbw-1
 
@@ -66,5 +66,26 @@ Native Org-Mode Support
 Scroll comes with one of the best note taking, planning, scheduling system,
 [[https://orgmode.org/][Org-Mode]], support. (and markdown soon)
 
+
+#+style: clr-white m-75
+*** Why Magical
+#+style: w-60% dis-f ai-center
+
+#+style: borbw-2
+Static site generators creates beautiful web pages almost without writing HTML
+and CSS. In regular site generators, user pick one of already created theme,
+layout and template, and pass some content which usually a markup language, and
+site generator generate web page according to theme and templates.
+
+#+style: borbw-2
+Even though this process make site creating so easy and fast, it increases
+difficulty of making components that has custom style.  Scroll has built-in
+utility-first CSS support that lets you add custom CSS to your elements right
+inside of your document. In Scroll while you can use only theme and templates
+also you can change some of your elements appearance and behavior without
+leaving your document.
+
+#+style: borbw-2
+So, Scroll turns your markup file to a magical scroll that creates unique web pages.
 * #+style: ta-center
 Built with ✨ by <a href="https://github.com/metinUr/scroll">scroll</a>

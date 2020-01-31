@@ -23,4 +23,9 @@ cargo build --release
 This will create executable under target/release folder.
 
 ** 3. Install from crates.io
-TODO
+If rust is installed, you can also install scroll from crates.io.
+#+BEGIN_SRC
+cargo install scroll-ssg
+
+
+#+END_SRC

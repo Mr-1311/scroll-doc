@@ -1,12 +1,12 @@
 #+TITLE: Pages
 * Pages
 ** Variables
-In org documents user can define some variables to use it on templates or change
+In org documents users can define some variables to use it on templates or change
 some config for only this file.
 
 Variable names are case insensitive.
 
-*NOTE*: More variables will come soon.
+*NOTE*: More variables will be added soon.
 
 *** title
 Can be used in templates.
@@ -30,7 +30,7 @@ Usage:
 
 
 *** Template
-Template variable determine template to use for this page.
+Template variable define template to be used for this page.
 
 Usage:
 #+BEGIN_SRC
