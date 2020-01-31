@@ -270,7 +270,7 @@ footer a {
 }
 .pagecon {
   border-left: none;
-  padding: 25px;
+  padding: 25px 5px;
 }
 
 @media (min-width: 768px) {

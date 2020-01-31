@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/scroll-doc/theme.css">
-    <link rel="stylesheet" type="text/css" href="/scroll-doc/scroll_style.css">
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+    <link rel="stylesheet" type="text/css" href="/scroll_style.css">
     <title> Folder Structure </title>
-    <link rel="stylesheet" href="/scroll-doc/syntax_hl/default.css">
-    <script src="/scroll-doc/syntax_hl/highlight.js"></script>
+    <link rel="stylesheet" href="/syntax_hl/default.css">
+    <script src="/syntax_hl/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
@@ -80,7 +80,7 @@
 <p>A Scroll directory can contain any file or directory except that has name of following files/dirs: scroll.toml, style_config.toml, public and templates. When Scroll builds a site it is copy all files and dirs with its content directly to public folder. If a file has a .org extension Scroll parse it to html and put it in selected template.</p>
 <h3 id="example">Example</h3>
 <div >
-<p>To understand better let's do an practical example. Currently Scroll hasn't build-in syntax highlighing but there is already nice plugins that work on html. So let's make an website that using <a href="https://highlightjs.org/">highlight.js</a> for syntax highlighing of code snippets.</p>
+<p>To understand better let's do an practical example. Currently Scroll hasn't built-in syntax highlighing but there is already nice plugins that works on html. So let's make an website that using <a href="https://highlightjs.org/">highlight.js</a> for syntax highlighing of code snippets.</p>
 <h4 id="create-new-site">Create new site</h4>
 <div >
 <p>First, we need to create new site.</p>
@@ -107,7 +107,7 @@ scroll new example
 </div>
 <h4 id="changing-template">Changing template</h4>
 <div >
-<p>To use highlight.js we need to download highlight.pack.js file and one css file and add these lines to html file:</p>
+<p>To use highlight.js we need to download highlight.pack.js file and one theme which is a css file and add these lines to html file:</p>
 <pre><code class="">
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
 &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
@@ -132,7 +132,7 @@ scroll new example
 2 directories, 9 files
 
 </code></pre>
-<p>To use highlight.js on every page we are going to link files via default_template.html file under the templates folder. I added these lines to head section.</p>
+<p>To use highlight.js on every page, we are going to link these files via default_template.html file under the templates folder. I added these lines to head section.</p>
 <pre><code class="">
 &lt;link rel=&quot;stylesheet&quot; href=&quot;/syntax_hl/default.css&quot;&gt;
 &lt;script src=&quot;/syntax_hl/highlight.js&quot;&gt;&lt;/script&gt;
@@ -142,7 +142,7 @@ scroll new example
 </div>
 <h4 id="building-site">Building site</h4>
 <div >
-<p>Now I can built the site with <code>scroll build</code> command. Directory tree looks like this.</p>
+<p>Now I can build the site with <code>scroll build</code> command. Directory tree looks like this.</p>
 <pre><code class="">
 .
 ├── index.org
